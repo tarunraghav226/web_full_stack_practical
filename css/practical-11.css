@@ -1,0 +1,44 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+table{
+    border-collapse: separate;
+    border-spacing: 0px;
+    border: 2px solid rgb(59, 11, 104);
+    margin: 20px auto;
+}
+
+td{padding: 10px;}
+
+table, tr{
+    border-radius: 7px;
+}
+
+table thead th{
+    padding: 10px;
+    border-bottom: 4px solid lightgray;
+}
+
+td{
+ border-bottom: 2px solid lightgray;   
+}
+
+
+tr:last-child td{border:none;}
+
+.ttitle{
+    background-color: rgb(59, 11, 104);
+    color: white;
+    padding: 10px;
+    border: none;
+}
+
+
+.edit:hover{color: blue;}
+.delete:hover{color: red}
+
+tr td:nth-child(4){color: green;}
+tr:last-child td:nth-child(4){color: red;}
