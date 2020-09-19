@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/practical-14.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">    
+    <title>Practical 14</title>
+</head>
+<body>
+
+    <h1 style="text-align: center; margin-top: 10vh;">FORM TEMPLATES</h1>
+    <main>
+
+        <div id="form1">
+            <div id="top1">
+                <span>Log in</span>
+                <span>
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-google-plus"></i>
+                </span>
+            </div>
+            <form action="#">
+                <input id="email" type="email" name="email" placeholder="Email"> <br>
+                <input id="password" type="password" name="password" placeholder="Password">
+                <br><span id="sp1">Forgot <a href="#"> Password? </a></span>
+                <button formaction="#" id="login"><a href="#"> Login </a></button>
+                <span id="sp2">Don't have an account? <a href="#">Sign up</a></span>
+            </form>
+        </div>
+        <div id="form2">
+            <div class="top2">
+                <span>Sign Up</span>
+            </div>
+            <form action="#">
+                <input id="email" type="email" name="email" placeholder="Email"> <br>
+                <input id="password" type="password" name="password" placeholder="Password">
+                
+                <br><br><br><input type="checkbox" name="check" id="check">
+                <label for="check" style="display:inline-block; padding-left: 20px;">Accept the <a href="#"> Term and Conditions </a></label>
+                <br><button formaction="#" id="signup"><a href="#"> Sign up </a></button>
+            </form>
+
+            <nav style="display: inline-block;">
+                <label for="signup">Have an account? <a href="#">Log in</a></label>
+            </nav>
+
+            <div id="bottom1">
+                <span>
+                    <i class="fa fa-facebook"></i>
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-google-plus"></i>
+                    </span>
+            </div>
+        </div>
+        <div id="form3">
+            <div class="top2" style="color: black;">Sign in</div>
+            <form action="#">
+                <input id="email" type="email" name="email" placeholder="Email"> <br>
+                <input id="password" type="password" name="password" placeholder="Password">
+                <br><span>Forgot <a href="#"> Password? </a></span>
+                <br><button formaction="#" id="signin"><a href="#"> Sign in </a></button>
+            </form>
+            <h6>or Sign in with:</h6>
+            <div id="bottom2">
+                <span>
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-google-plus"></i>
+            </span>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
