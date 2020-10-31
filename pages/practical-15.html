@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical-15</title>
+    <link rel="stylesheet" href="../css/practical-15.css">
+</head>
+<body>
+    <h1>Counter</h1>
+    <div class="container">
+        <span>Min Value 0</span>
+        <button id="minus">-</button>
+        <span id="data">1</span>
+        <button id="plus">+</button>
+        <span>Max Value 5</span>
+    </div>
+    <script>
+        var minus = document.getElementById("minus");
+        minus.onclick = function(){
+            var data = document.getElementById("data");
+            if (Number(data.innerHTML) >= 0){
+                plus.disabled = false;
+                data.innerHTML = Number(data.innerHTML)-1;
+            }
+            if (Number(data.innerHTML)<=0)
+                this.disabled = true;
+        };
+
+        var plus = document.getElementById("plus");
+        plus.onclick = function(){
+            var data = document.getElementById("data");
+            if (Number(data.innerHTML) <= 5){
+                minus.disabled = false;
+                data.innerHTML = Number(data.innerHTML)+1;
+            }
+
+            if(Number(data.innerHTML)>=5)
+                this.disabled = true;
+        };
+    </script>
+</body>
+</html>
