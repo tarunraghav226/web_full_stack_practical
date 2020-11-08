@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/practrical-16.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Practical-16</title>
+</head>
+<body>
+    <div class="err">
+    </div>
+    <div class="entry">
+        <input id="inp" type="text" name="text">
+        <i class="fa fa-plus" onclick="add()"></i>
+    </div>
+    <div class="list">
+    </div>
+
+    <script>
+        function add(){
+            var list = document.getElementsByClassName("list")[0];
+            var text = document.getElementById("inp");
+            
+            if (text.value == ""){
+                var err = document.getElementsByClassName("err")[0];
+                err.style.display = "block";
+                err.innerHTML = "Entry should not be empty.";
+            }
+            else{
+                text = text.value;
+                var span = document.createElement("span");
+                span.innerText = text;
+                
+                var checkIcon = document.createElement("i");
+                checkIcon.classList.add("fa");
+                checkIcon.classList.add("fa-check");
+                checkIcon.classList.add("check");
+                checkIcon.onclick = function(){
+                    this.classList.toggle("cover");
+                    this.previousSibling.classList.toggle("cover");
+                    this.nextSibling.classList.toggle("cover");
+                };
+
+                var timesIcon = document.createElement("i");
+                timesIcon.classList.add("fa");
+                timesIcon.classList.add("fa-times");
+                timesIcon.classList.add("times");
+                timesIcon.onclick = function (){
+                    this.parentNode.remove();
+                };
+
+                var listElement = document.createElement("div");
+                listElement.classList.add("list-element");
+                listElement.appendChild(span);
+                listElement.appendChild(checkIcon);
+                listElement.appendChild(timesIcon);
+
+                list.appendChild(listElement);
+            }
+        }
+
+    </script>
+</body>
+</html>
