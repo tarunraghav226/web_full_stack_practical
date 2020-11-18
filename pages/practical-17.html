@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical-17</title>
+    <style>
+        body{
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        main{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #time{
+            font-size: 60px;
+            font-weight: 600;
+            color: rgba(225, 229, 233, 0.836);
+        }
+
+        #title{
+            font-size: 30px;
+            font-weight: 300;
+            color: rgba(225, 229, 233, 0.836);
+        }
+
+        #date{
+            font-size: 20px;
+            font-weight: 400;
+            color: white;
+        }
+
+        #inpMsg{
+            background-color: transparent;
+            outline: none;
+            border: none;
+            font-size: 30px;
+            color: rgba(255, 255, 255, 0.719);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div id="time"></div>
+        <div id="title"></div>
+        <div id="message"><input type="text" id="inpMsg"></div>
+        <div id="date"></div>
+    </main>
+</body>
+<script>
+
+    function showDetails(){
+
+            var time = new Date();
+
+            var body = document.getElementsByTagName("body")[0];
+            var timeCont = document.getElementById("time");
+            var title = document.getElementById("title");
+            var dateCont = document.getElementById("date");
+            var inpMsg = document.getElementById("inpMsg");
+
+            var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+            var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+            var hours = time.getHours();
+            var minute = time.getMinutes();
+            var seconds = time.getSeconds();
+
+            if(hours >= 0  && hours < 12){
+                body.style.backgroundImage = "url('../images/practical-17/morning-image.jpg')";
+                title.innerHTML = "Good Morning";
+            }
+
+            if(hours >= 12 && hours < 18){
+                body.style.backgroundImage = "url('../images/practical-17/noon.jpg')";
+                title.innerHTML = "Good AfterNoon";
+            }
+
+            if(hours >= 18 && hours < 24){
+                body.style.backgroundImage = "url('../images/practical-17/night.webp')";
+                title.innerHTML = "Good Evening";
+            }
+
+            if(hours.toString().length == 1) hours = "0"+hours;
+            if(minute.toString().length == 1) minute = "0"+minute;
+            if(seconds.toString().length == 1) seconds = "0"+seconds;
+
+            timeCont.innerHTML = hours+":"+minute+":"+seconds;
+
+            var month = months[time.getMonth()];
+            var day = days[time.getDay()];
+            var date = String(time.getDate()).padStart(2,'0');
+            var year = time.getFullYear();
+
+            dateCont.innerHTML = month+" "+day+" "+date+" "+year;
+
+            if(localStorage.message){
+                inpMsg.value = localStorage.getItem("message");
+            }
+            else{
+                inpMsg.placeholder = "[Enter your message here.]";
+            }
+    }
+
+    function update(){
+        alert("hello");
+        localStorage.setItem("message",inpMsg.value);
+    }
+
+    inpMsg.oninput = function() {
+        localStorage.setItem("message",inpMsg.value);
+    };
+    inpMsg.onblur = function() {
+        localStorage.setItem("message",inpMsg.value);
+    };
+
+    setInterval(showDetails, 1000);
+    
+</script>
+</html>
