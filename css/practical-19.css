@@ -1,0 +1,87 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: lightgrey;
+}
+
+.container{
+    width: 480px;
+    height: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    margin-top: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+#progress{
+    width: 480px;
+    display: flex;
+    flex-direction: row;
+}
+
+#progress-bar{
+    position: absolute;
+    background-color: crimson;
+    height: 40px;
+    width: 160px;
+    transition: 1s;
+}
+
+ #progress-bar::after{
+    content: '';
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    right: -20px;
+    border-left: 20px solid crimson;
+}  
+
+#progress small{
+    z-index: 1;
+    display: block;
+    width: 160px;
+    text-align: center;
+    padding: 10px;
+}
+
+#form1{
+    position: absolute;
+    width: 360px;
+    top: 80px;
+    left: 40px;
+    transition: .5s;
+}
+
+#form2, #form3{
+    position: absolute;
+    width: 360px;
+    top: 80px;
+    left: 500px;
+    transition: .5s;
+}
+
+input{
+    background-color: transparent;
+    outline: none;
+    border:none;
+    border-bottom: 1px solid lightgray;
+    font-size: 20px;
+}
+
+button{
+    background-color: crimson;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 10px;
+    border:none;
+    width: 40%;
+}
